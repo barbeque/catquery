@@ -1,4 +1,4 @@
-from scraper import Scraper
+from scraper import Scraper, CatListing
 import requests
 from lxml import etree
 from pyquery import PyQuery as pq
@@ -20,10 +20,7 @@ class MeowFoundationScraper(Scraper):
         images = querier(imgQuery)
 
         # TODO: parse the extracted html
+        result = []
         for name, image, link in zip(names, images, links):
-            print '==Cat=='
-            print name
-            print image
-            print link
-
-        return []
+            result.append(CatListing(name,image,link))
+        return result
