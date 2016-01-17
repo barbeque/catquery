@@ -22,5 +22,5 @@ class MeowFoundationScraper(Scraper):
         # TODO: parse the extracted html
         result = []
         for name, image, link in zip(names, images, links):
-            result.append(CatListing(name,image,link))
+            result.append(CatListing(name.text, image.get('src'), link.get('href')))
         return result
