@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>CATS</title>
+  <style>
+    img {
+      max-width: 128px;
+      max-height: 128px;
+    }
+    a {
+      font-family: fantasy;
+      font-size: 25;
+    }
+  </style>
+</head>
+<body>
+  <h1>CATS</h1>
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+    </tr>
+  {% for cat in cats %}
+    <tr>
+      <td><img src="{{ cat.imageUrl }}"/></td>
+      <td><a href="{{cat.link}}">{{cat.name}}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+</body>
+</html>
