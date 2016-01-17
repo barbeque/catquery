@@ -11,4 +11,4 @@ for scraper in scrapers:
 cats.sort(key = attrgetter('name'))
 
 for cat in cats:
-    print cat.name
+    print cat.name, cat.link
